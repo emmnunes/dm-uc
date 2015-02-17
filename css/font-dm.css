@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "design-multimedia";
+  src:url("../fonts/design-multimedia.eot");
+  src:url("../fonts/design-multimedia.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/design-multimedia.woff") format("woff"),
+    url("../fonts/design-multimedia.ttf") format("truetype"),
+    url("../fonts/design-multimedia.svg#design-multimedia") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "design-multimedia";
+    url("../fonts/design-multimedia.svg#design-multimedia") format("svg");
+  }
+}
+
+[data-icon]:before {
+  font-family: "design-multimedia" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="dm-"]:before,
+[class*=" dm-"]:before {
+  font-family: "design-multimedia" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dm-lg{
+  font-size:1.2em;
+}
+
+.dm-2x{
+  font-size:2em;
+}
+
+.dm-3x{
+  font-size:3em;
+}
+
+.dm-4x{
+  font-size:4em;
+}
+
+.dm-5x{
+  font-size:5em;
+}
+
+.dm-fotografia:before {
+  content: "a";
+}
+.dm-esquerda:before {
+  content: "b";
+}
+.dm-voltar-esquerda:before {
+  content: "c";
+}
+.dm-web-design:before {
+  content: "d";
+}
+.dm-imagem:before {
+  content: "e";
+}
+.dm-adiciona-video:before {
+  content: "f";
+}
+.dm-adicionar:before {
+  content: "g";
+}
+.dm-alterar:before {
+  content: "h";
+}
+.dm-animacao:before {
+  content: "i";
+}
+.dm-infografia:before {
+  content: "j";
+}
+.dm-interfaces:before {
+  content: "k";
+}
+.dm-apagar:before {
+  content: "l";
+}
+.dm-critica-e-investigacao:before {
+  content: "m";
+}
+.dm-jogos-digitais:before {
+  content: "n";
+}
+.dm-menu:before {
+  content: "o";
+}
+.dm-desenho:before {
+  content: "p";
+}
+.dm-design-grafico:before {
+  content: "q";
+}
+.dm-modelacao:before {
+  content: "r";
+}
+.dm-ordenar:before {
+  content: "s";
+}
+.dm-direita:before {
+  content: "t";
+}
+.dm-editar:before {
+  content: "u";
+}
+.dm-procurar:before {
+  content: "v";
+}
+.dm-tipografia:before {
+  content: "w";
+}
+.dm-editorial:before {
+  content: "x";
+}
+.dm-video:before {
+  content: "z";
+}
+.dm-voltar-direita:before {
+  content: "A";
+}
+.dm-fechar:before {
+  content: "B";
+}
+.dm-aprovar:before {
+  content: "y";
+}
+.dm-apreciar:before {
+  content: "C";
+}
+.dm-depreciar:before {
+  content: "D";
+}

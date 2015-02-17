@@ -1,0 +1,15 @@
+body#tinymce.wp-editor { 
+  font-family: "soleil", sans-serif;
+  font-size: 18px;
+  background: #f3f3f3;
+  line-height: normal;
+  font-weight: normal;
+}
+
+div.mce-panel {
+	background: #f3f3f3 !important;
+}
+
+p {
+	margin-top: 0;
+}
