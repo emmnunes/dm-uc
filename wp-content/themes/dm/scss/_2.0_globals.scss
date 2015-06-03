@@ -1,0 +1,144 @@
+/*------------------------------------*\
+  GENERAL
+\*------------------------------------*/
+
+html {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  background-color: $lighter;
+  color: $grayer;
+  font-family: $secondary-font;
+  overflow: hidden;
+  &.admin-bar {
+    #search-wrapper, #navigation-wrapper, .ns-box.ns-bar {
+      top: 32px !important;
+    }
+    #header {
+      top: 46px;
+    }
+  }
+}
+
+a {
+  color: $grayer;
+  &:hover {
+    color: $grayer;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $headers-font;
+  line-height: 1.2;
+}
+
+p {
+  font-family: $secondary-font;
+}
+
+hr {
+  border-top: 1px solid $light;
+  margin: 0;
+  padding: 0;
+}
+
+input, textarea {
+  outline: none;
+  -webkit-appearance: none !important;
+  border-radius: 0;
+}
+
+input[type="submit"], button {
+  text-transform: uppercase;
+  border: 1px solid $light !important;
+  padding: 5px 15px;
+  width: auto !important;
+  margin-bottom: 50px;
+  color: $light !important;
+  background: none !important;
+  outline: none;
+  &:hover {
+    color: $grayer !important;
+    border: 1px solid $grayer !important;
+  }
+  &:active {
+    outline: none;
+  }
+}
+
+.dash {
+  font-size: 60px;
+  font-family: $primary-font;
+  line-height: 0;
+  font-weight: 100;
+}
+
+input::-webkit-input-placeholder { 
+  color: $light;
+  opacity:  1;
+  line-height: 1.5em;
+}
+input:-moz-placeholder {
+  color: $light;
+  opacity:  1;
+  line-height: 1.5em;
+}
+input::-moz-placeholder { 
+  color: $light;
+  opacity:  1;
+  line-height: 1.5em;
+}
+input:-ms-input-placeholder {
+  color: $light;
+  opacity:  1;
+  line-height: 1.5em;
+}
+
+.h-align {
+   display: table;
+   width: 100%;
+   height:100%;
+}
+
+.v-align {
+   display: table-cell;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.tooltip {
+  &.bottom {
+    .tooltip-arrow {
+      border-bottom-color: $grayer;
+    }
+  }
+  &.right {
+    .tooltip-arrow {
+      border-right-color: $grayer;
+    }
+  }
+  &.left {
+    .tooltip-arrow {
+      border-left-color: $grayer;
+    }
+  }
+  &.top {
+    .tooltip-arrow {
+      border-top-color: $grayer;
+    }
+  }
+  .tooltip-inner {
+    border-radius: 0;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    background-color: $grayer;
+    color: $lighter;
+  }
+}

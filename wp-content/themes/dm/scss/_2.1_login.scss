@@ -1,0 +1,81 @@
+
+/*------------------------------------*\
+  LOGIN
+\*------------------------------------*/
+
+.page.login, .page.recuperar, .page.registar, .error404 {
+  height: 100%;
+  width: 100%;
+  #wrapper,main, section {
+    height: 100%;
+    width: 100%;
+  }
+
+  #content {
+    padding-bottom: 0 !important;
+  }
+
+  section {
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+  }
+
+  .overlay {
+    height: 100%;
+    background: rgba($lighter,0.9);
+  }
+
+  .logo {
+    margin-bottom: 100px;
+
+    img {
+      height: 75px;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid $gray;
+    color: $grayer;
+    font-size: 24px;
+    font-family: $secondary-font;
+    font-weight: 100;
+    text-align: center;
+    &.done-button {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .activated-message {
+    margin-bottom: 25px;
+  }
+
+  a {
+    font-family: $secondary-font;
+    color: $light;
+    font-size: 14px;
+    font-weight: 100;
+    text-decoration: underline;
+    margin-top: 60px;
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  .status {
+    font-family: $secondary-font;
+    font-size: 14px;
+    color: $gray;
+    margin-top: 5px;
+  }
+}

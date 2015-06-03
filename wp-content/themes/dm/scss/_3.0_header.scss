@@ -1,0 +1,72 @@
+/*------------------------------------*\
+  HEADER
+\*------------------------------------*/
+
+#header {
+  position: fixed;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 30px;
+  z-index: 10001;
+
+  @include transform-origin(0 0 0);
+  #logo {
+    left: 50%;
+    position: absolute;
+    top: 0;
+    margin-left: -56px;
+    img {
+      height: 50px;
+    }
+    @media (min-width: 768px) {
+      margin-left: -64px;
+    }
+  }
+  #navToggle {
+    float: left;
+    .dm-fechar {
+      display: none;
+    }
+    &.active {
+      .dm-menu {
+        display: none;
+      }
+      .dm-fechar {
+        display: block;
+      }
+    }
+  }
+  #searchToggle {
+    float: right;
+    .dm-voltar-esquerda {
+      display: none;
+    }
+    &.active {
+      .dm-procurar {
+        display: none;
+      }
+      .dm-voltar-esquerda {
+        display: block;
+      }
+    }
+  }
+  /* Pane toggles */
+  #navToggle, #searchToggle {
+    cursor: pointer;
+    .icon {
+      font-size: 27px;
+    }
+  }
+
+  &.push-left {
+    @include transform(translate3d(240px,0,0) !important);
+  }
+}
+
+.touch {
+  #header {
+    padding-right: 15px;    
+  }
+}
