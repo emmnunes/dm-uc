@@ -15,8 +15,8 @@
  * Plugin Name: Edit Author Slug
  * Plugin URI: http://brandonallen.org/wordpress/plugins/edit-author-slug/
  * Description: Allows an Admin (or capable user) to edit the author slug of a user, and change the Author Base. <em>i.e. - (WordPress default structure) http://example.com/author/username/ (Plugin allows) http://example.com/ninja/master-ninja/</em>
- * Version: 1.0.3
- * Tested With: 3.6.1, 3.7.1, 3.8.1, 3.9.2, 4.0
+ * Version: 1.0.4
+ * Tested With: 3.6.1, 3.7.1, 3.8.1, 3.9.2, 4.0.1, 4.1.1, 4.2
  * Author: Brandon Allen
  * Author URI: http://brandonallen.org/
  * License: GPL2+
@@ -25,23 +25,23 @@
  */
 
 /*
-			Copyright 2014  Brandon Allen  (email : wp_plugins ([at]) brandonallen ([dot]) org)
+	Copyright 2015  Brandon Allen  (email : wp_plugins ([at]) brandonallen ([dot]) org)
 
-			This program is free software; you can redistribute it and/or modify
-			it under the terms of the GNU General Public License as published by
-			the Free Software Foundation; either version 2 of the License, or
-			(at your option) any later version.
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
 
-			This program is distributed in the hope that it will be useful,
-			but WITHOUT ANY WARRANTY; without even the implied warranty of
-			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-			GNU General Public License for more details.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
 
-			You should have received a copy of the GNU General Public License
-			along with this program; if not, write to the Free Software
-			Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-			http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+	http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
 */
 
 // Exit if accessed directly
@@ -52,6 +52,27 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  */
 if ( ! class_exists( 'BA_Edit_Author_Slug' ) ) :
 
+	/**
+	 * Final BA_Edit_Author_Slug class.
+	 *
+	 * @since 0.1.0
+	 *
+	 * @final
+	 *
+	 * @property string $version
+	 * @property int $db_version
+	 * @property int $current_db_version
+	 * @property string $file
+	 * @property string $plugin_dir
+	 * @property string $plugin_url
+	 * @property string $plugin_basename
+	 * @property string $domain
+	 * @property string $author_base
+	 * @property int $do_auto_update
+	 * @property string $default_user_nicename
+	 * @property int $do_role_based
+	 * @property array $role_slugs
+	 */
 	final class BA_Edit_Author_Slug {
 
 		/** Magic *****************************************************************/
@@ -67,7 +88,7 @@ if ( ! class_exists( 'BA_Edit_Author_Slug' ) ) :
 		 * @since 1.0.0
 		 *
 		 * @see BA_Edit_Author_Slug::setup_globals()
-		 * @var array
+		 * @var object
 		 */
 		private $data;
 
@@ -82,11 +103,14 @@ if ( ! class_exists( 'BA_Edit_Author_Slug' ) ) :
 		 * @since 1.0.0
 		 *
 		 * @staticvar object $instance
+		 *
 		 * @uses BA_Edit_Author_Slug::setup_globals() Setup the globals needed.
 		 * @uses BA_Edit_Author_Slug::includes() Include the required files.
 		 * @uses BA_Edit_Author_Slug::setup_actions() Setup the hooks and actions.
+		 *
 		 * @see ba_eas()
-		 * @return The one true BA_Edit_Author_Slug
+		 *
+		 * @return BA_Edit_Author_Slug|null The one true BA_Edit_Author_Slug
 		 */
 		public static function instance() {
 
@@ -187,7 +211,7 @@ if ( ! class_exists( 'BA_Edit_Author_Slug' ) ) :
 
 			/** Versions ****************************************************************/
 
-			$this->version            = '1.0.3';
+			$this->version            = '1.0.4';
 			$this->db_version         = 133;
 			$this->current_db_version = 0;
 
@@ -208,17 +232,18 @@ if ( ! class_exists( 'BA_Edit_Author_Slug' ) ) :
 			$this->author_base = 'author';
 
 			// Options
-			if ( $base = get_option( '_ba_eas_author_base', 'author' ) ) {
+			if ( $base = get_option( '_ba_eas_author_base' ) ) {
 				// Author base
 				if ( ! empty( $base ) ) {
 					$this->author_base = $base;
 				}
 
 				// Current DB version
-				$this->current_db_version = absint( get_option( '_ba_eas_db_version', 0 ) );
+				$this->current_db_version = absint( get_option( '_ba_eas_db_version' ) );
 
 			// Pre-0.9 Back compat
 			} elseif ( $options = get_option( 'ba_edit_author_slug' ) ) {
+
 				// Author base
 				if ( ! empty( $options['author_base'] ) ) {
 					$this->author_base = $options['author_base'];
@@ -254,12 +279,12 @@ if ( ! class_exists( 'BA_Edit_Author_Slug' ) ) :
 		private function includes() {
 
 			// Load the core functions
-			require_once( $this->plugin_dir . 'includes/general-functions.php' );
+			require_once( $this->plugin_dir . 'includes/functions.php' );
 			require_once( $this->plugin_dir . 'includes/hooks.php'             );
 
 			// Maybe load the admin functions
 			if ( is_admin() ) {
-				require_once( $this->plugin_dir . 'includes/admin-functions.php' );
+				require_once( $this->plugin_dir . 'includes/admin.php' );
 			}
 		}
 
@@ -279,7 +304,7 @@ if ( ! class_exists( 'BA_Edit_Author_Slug' ) ) :
 
 			// Author Base Actions
 			add_action( 'after_setup_theme', array( $this, 'set_role_slugs' )          );
-			add_action( 'init',              array( $this, 'author_base_rewrite' ), 10 );
+			add_action( 'init',              array( $this, 'author_base_rewrite' ), 4  );
 			add_action( 'init',              array( $this, 'add_rewrite_tags' ),    20 );
 
 			// Localize
@@ -383,7 +408,7 @@ if ( ! class_exists( 'BA_Edit_Author_Slug' ) ) :
 	 *
 	 * Example: <?php $ba_eas = ba_eas(); ?>
 	 *
-	 * @return The one true BA_Edit_Author_Slug Instance
+	 * @return BA_Edit_Author_Slug The one true BA_Edit_Author_Slug Instance
 	 */
 	function ba_eas() {
 		return BA_Edit_Author_Slug::instance();

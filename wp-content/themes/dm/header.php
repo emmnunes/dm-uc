@@ -14,6 +14,22 @@
 
 		<?php wp_head(); ?>
 
+	    <!-- FACEBOOK META -->
+	    <?php if (have_posts()):while(have_posts()):the_post(); endwhile; endif;?>
+	    <!-- if page is content page -->
+	    <?php if (is_single()) { ?>
+	    <meta property="og:url" content="<?php the_permalink() ?>"/>
+	    <meta property="og:title" content="<?php single_post_title(''); ?>" />
+	    <meta property="og:description" content="<?php bloginfo('description'); ?>" />
+	    <meta property="og:type" content="article" />
+	    <!-- if page is others -->
+	    <?php } else { ?>
+	    <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
+	    <meta property="og:description" content="<?php bloginfo('description'); ?>" />
+	    <meta property="og:type" content="website" />
+	    <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/icons/ograph.jpg" />
+	    <?php } ?>
+
 		<script>
         // conditionizr.com
         // configure environment tests
