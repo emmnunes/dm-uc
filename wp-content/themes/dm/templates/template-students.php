@@ -18,9 +18,9 @@
 			</div>
 
 			<?php 
-				$author_query = new WP_User_Query( array( 'role' => 'author', 'orderby' => 'display_name', 'order' => 'ASC' ) );
+				$author_query = new WP_User_Query( array( 'role' => 'author', 'orderby' => 'display_name', 'order' => 'ASC', 'posts_per_page' => -1 ) );
 				$author = $author_query->get_results(); 
-				$teacher_author_query = new WP_User_Query( array( 'role' => 'teacher_author', 'orderby' => 'display_name', 'order' => 'ASC' ) );
+				$teacher_author_query = new WP_User_Query( array( 'role' => 'teacher_author', 'orderby' => 'display_name', 'order' => 'ASC', 'posts_per_page' => -1 ) );
 				$teacher_author = $teacher_author_query->get_results();
 				$users = array_merge( $author, $teacher_author);
 

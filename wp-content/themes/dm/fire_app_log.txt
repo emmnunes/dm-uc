@@ -264,3 +264,5 @@ Load paths:
   /vendor/assets/stylesheets)
 2015-06-03 15:20:22 overwrite style.css 
 2015-06-03 15:20:27 overwrite style.css 
+2015-06-03 15:42:40 identical style.css 
+2015-06-03 15:42:54 identical style.css 
