@@ -1216,6 +1216,82 @@
     }
   }
 
+  /* Miniature Upload */
+  .field_key-field_5570375781c1d {
+    width: 100%;
+    clear: both;
+    float: left;
+    text-align: center;
+
+    .acf-label {
+      display: block !important;
+
+      label {
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 500;
+          font-family: "soleil",sans-serif;
+          font-size: 16px;
+      }
+    }
+    
+    .view.hide-if-value {
+      width: 100%;
+      position: inherit;
+
+      a {
+        background: $lighter;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        top: 0;
+        left: 0;
+        border: 0;
+        padding: 50px 0;
+        border-bottom: 1px dashed $light;
+        border-width: 3px;
+        border-radius: 0;
+        text-transform: uppercase;
+        font-family: $secondary-font;
+        font-size: 22px;
+        color: $light;
+        text-decoration: none;
+        font-weight: normal;
+        i {
+          &.icon {
+            font-size: 82px;
+          }
+        }
+        &:hover {
+          color: $grayer;
+          border-bottom: 3px solid $grayer;
+        }
+        &:active {
+          line-height: 26px;
+        }
+      }
+    }
+    .view.show-if-value {
+      height: 500px;
+      overflow: hidden;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+      ul {
+        top: inherit;
+        right: 15px;
+        bottom: 15px;
+        li {
+          &:first-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
   /* Work Selects */
 
   .field_key-field_53da7f67483c3, .field_key-field_53da80d7164a9, .field_key-field_53da8092af685, .field_key-field_53da8112164aa, .field_key-field_53da8216547ca, .field_key-field_53cc0c1253175,.field_key-field_53cb1133144f5, .acf-form-submit {
@@ -1336,6 +1412,14 @@
     }
   }
 
+}
+
+.page-template-template-user-add-work {
+  .acf-form-submit {
+    width: 100%;
+    margin: 60px 0 0 0;
+    text-align: center;
+  }
 }
 
 .author, .post-type-archive-trabalhos, .page-id-123, .page-id-141 {

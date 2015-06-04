@@ -3,7 +3,11 @@
 		'col-xs-12'
 	);
 
-	$cover = get_field('imagem_principal',get_the_ID()); 
+	if(!empty(get_field('miniatura',get_the_ID()))) {
+		$cover = get_field('miniatura',get_the_ID()); 
+	} else {
+		$cover = get_field('imagem_principal',get_the_ID()); 
+	}
 	$course = get_field('cadeira',get_the_ID());
 	$tags = get_field('etiquetas',get_the_ID());
 	$authors = get_field('autor',get_the_ID());

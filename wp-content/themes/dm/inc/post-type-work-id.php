@@ -5,7 +5,11 @@
 		'col-md-4'
 	);
 
-	$cover = get_field('imagem_principal',$work); 
+	if(!empty(get_field('miniatura',$work))) {
+		$cover = get_field('miniatura',$work); 
+	} else {
+		$cover = get_field('imagem_principal',$work); 
+	}
 	$course = get_field('cadeira',$work);
 	$tags = get_field('etiquetas',$work);
 	$authors = get_field('autor',$work);

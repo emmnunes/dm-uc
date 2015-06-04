@@ -12,6 +12,7 @@
 		/* Text inside fields - add work page */
 		$(".field_key-field_53cb216897aa1 input").attr("placeholder", "Copiar e colar link do Youtube ou Vimeo");
 		$(".canvas-error").html('<p><strong>Erro</strong>. Por favor verifique se o link é válido.</p>');
+		$(".field_key-field_5570375781c1d .hide-if-value").html('<a data-name="add" class="acf-button" href="#"><i class="icon dm-imagem"></i></br></br>Carregar Miniatura</a>');
 		$(".field_key-field_53cb150657678 .hide-if-value").html('<a data-name="add" class="acf-button" href="#"><i class="icon dm-imagem"></i></br></br>Carregar Foto de Capa</a>');
 		$(".field_key-field_53cb1191144f7 .hide-if-value, .field_key-field_53e04c9b38a5b .hide-if-value").html('<a data-name="add" class="acf-button" href="#"><i class="icon dm-imagem dm-4x"></i></br></br>Carregar Imagem</a>');
 		$(".acf-input .canvas").append('<i class="icon dm-adiciona-video hide-if-value"></i>');
